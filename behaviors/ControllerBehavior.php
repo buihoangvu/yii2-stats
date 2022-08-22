@@ -144,7 +144,7 @@ class ControllerBehavior extends Behavior
         }
 
         $visitor = new Visitors();
-        $visitor->request_uri = $request->getAbsoluteUrl();
+        $visitor->request_uri = $request->url;
         $visitor->remote_addr = $this->getRemoteIp($request);
         $visitor->remote_host = $this->getRemoteHost($request);
         $visitor->user_id = !Yii::$app->user->isGuest ? Yii::$app->user->identity->id : null;
