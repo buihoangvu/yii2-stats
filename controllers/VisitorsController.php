@@ -238,7 +238,7 @@ class VisitorsController extends Controller
             'clientPlatforms' => $clientPlatforms,
             'clientBrowsers' => $clientBrowsers,
             'chartData' => $chartData,
-            'mapData' => Json::encode($mapData),
+            'mapData' => isset($mapData) ? Json::encode($mapData) : [],
             'module' => $module,
             'reader' => $reader
         ]);
