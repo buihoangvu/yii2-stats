@@ -109,7 +109,7 @@ class ControllerBehavior extends Behavior
         // Ignoring by route
         if (count($ignoreRoute) > 0) {
             foreach ($ignoreRoute as $route) {
-                if(preg_match('/('.preg_quote($route,'/').')/i', $request->url) || preg_match('/('.preg_quote($route,'/').')/i', $request->url))
+                if(preg_match('/('.preg_quote($route,'/').')/i', $request->absoluteUrl) || preg_match('/('.preg_quote($route,'/').')/i', $request->absoluteUrl))
                     return;
             }
         }
