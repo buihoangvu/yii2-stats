@@ -31,7 +31,6 @@
     "wdmg/yii2-helpers": "^1.4.3",
     "wdmg/yii2-validators": "^1.0.6"
   },
-  "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
       "wdmg\\stats\\": ""
