@@ -65,6 +65,11 @@ JS
 
     <?php
 
+    if($searchModel->period == '30mins')
+        $buttonClass['30mins'] = 'btn-primary';
+    else
+        $buttonClass['30mins'] = 'btn-default';
+
         if($searchModel->period == 'today')
             $buttonClass['today'] = 'btn-primary';
         else
@@ -103,6 +108,15 @@ JS
             'style' => 'display:block; margin: 15px 0px;'
         ],
         'buttons' => [
+            Button::widget([
+                'label' => Yii::t('app/modules/stats', '30mins'),
+                'options' => [
+                    'name' => 'period',
+                    'type' => 'submit',
+                    'value' => '30mins',
+                    'class' => 'btn ' . $buttonClass['30mins']
+                ]
+            ]),
             Button::widget([
                 'label' => Yii::t('app/modules/stats', 'Today'),
                 'options' => [
