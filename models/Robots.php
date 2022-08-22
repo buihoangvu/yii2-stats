@@ -58,7 +58,7 @@ class Robots extends ActiveRecord
 
         $hosts = unserialize($this->hosts);
         if(is_array($hosts))
-            $this->hosts = implode('\r\n', $hosts);
+            $this->hosts = implode($hosts, '\r\n');
         else
             $this->hosts = '';
     }
