@@ -154,7 +154,7 @@ class VisitorsSearch extends Visitors
         }
 
         if(!$this->period)
-            $this->period = 'today';
+            $this->period = '30mins';
 
         $dateTime = new \DateTime('00:00:00');
         if ($this->period == '30mins') {
