@@ -92,7 +92,6 @@ class VisitorsController extends Controller
 
         $searchModel = new VisitorsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $visitors = $dataProvider->query->all();
 
         $reader = null;
         $module = $this->module;
@@ -160,6 +159,7 @@ class VisitorsController extends Controller
                 $timestamp = $dateTime->modify('+1 month')->getTimestamp();
             }
 
+            $visitors = $dataProvider->query->all();
             foreach ($visitors as $visitor) {
                 for ($i = 1; $i <= $iterations; $i++) {
 
