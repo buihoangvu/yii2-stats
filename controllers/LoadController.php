@@ -96,6 +96,7 @@ class LoadController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $visitors = $dataProvider->query->all();
         $module = $this->module;
+        $chartDataSumm = [];
 
         if ($module->useChart && $searchModel->viewChart && ($searchModel->period == 'today' || $searchModel->period == 'yesterday' || $searchModel->period == 'week' || $searchModel->period == 'month' || $searchModel->period == 'year')) {
 
